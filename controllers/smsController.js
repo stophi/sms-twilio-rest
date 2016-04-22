@@ -14,7 +14,7 @@ exports.sendMessage = function(req, res, next) {
 
 	    to: sanitizer.getCorrectEcuadorNumberFormat(req.query.to),
 	    from: process.env.TWILIO_NUMBER,
-	    body: messageBuilder.buildMessage(req.query.to, null, req.body.message)
+	    body: messageBuilder.buildMessage(req.query.from, null, req.body.message)
 
 	}, function(err, responseData) {
 	    if (err) {
